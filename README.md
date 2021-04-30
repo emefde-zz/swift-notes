@@ -1,0 +1,3 @@
+# swift-notes
+
+Some example projects and playgrounds I created while learning some new things. Lacking proper comments and description but maybe in time...
