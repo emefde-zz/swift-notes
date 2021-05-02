@@ -1,0 +1,41 @@
+name: XcodeGenExample
+options:
+  bundleIdPrefix: com.xcodeGenExample.mfd
+targets: 
+  xcode-gen-ios: 
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: 
+      path: XcodeGenExample
+    dependencies: 
+      - target: Networking
+      - target: Caching
+      - target: ProfilesFeature
+    scheme: 
+      testTarget:
+        - xcode-gen-ios-unit-tests
+        - xcode-gen-ios-ui-tests
+
+  xcode-gen-tvOS: 
+    type: application
+    platform: tvOS
+    deploymentTarget: "13.0"
+    sources: 
+      path: XcodeGenExample
+    dependencies: 
+      - target: Networking
+      - target: Caching
+      - target: ProfilesFeature
+    scheme: 
+      target:
+include: 
+  - networking.yml
+  - path: modules/networking.yml
+    relativePaths: false
+  - caching.yml
+  - path: modules/caching.yml
+    relativePaths: false
+  - features.yml
+  - path: features/features.yml
+    relativePaths: false
