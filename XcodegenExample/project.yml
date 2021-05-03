@@ -1,0 +1,23 @@
+name: Client
+options:
+  bundleIdPrefix: com.XcodegenExample.mfd
+  deploymentTarget: 
+    iOS: "13.0"
+    tvOS: "13.0"
+attributes: 
+  ORGANIZATIONNAME: "mfd corp"
+include: 
+  - path: xcodegen/tvos.yml
+    relativePaths: false
+  - path: xcodegen/ios.yml
+    relativePaths: false
+  - path: xcodegen/scheme-template.yml
+    relativePaths: false
+  - path: xcodegen/target-template-ios.yml
+    relativePaths: false
+  - path: xcodegen/target-template-tvos.yml
+    relativePaths: false
+  - path: xcodegen/modules.yml
+    relativePaths: false
+  - path: xcodegen/features.yml
+    relativePaths: false

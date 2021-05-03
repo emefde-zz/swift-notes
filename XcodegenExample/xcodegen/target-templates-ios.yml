@@ -1,0 +1,24 @@
+targetTemplates:
+  base-ios:
+    templates: 
+      - frameworks
+    type: application
+    platform: iOS
+    sources: 
+      - path: XcodegenExample
+  base-ios-unit-tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: XcodegenExampleUnitTests
+    settings:
+      base:
+        TEST-HOST: "$(BUILT_PRODUCTS_DIR)/XcodegenExample.app/XcodegenExample"
+  base-ios-ui-tests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: 
+      - path: XcodegenExampleUITests
+    settings:
+      base: 
+        TEST_TARGET_NAME: ${target_name}

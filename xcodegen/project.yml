@@ -16,8 +16,17 @@ targets:
       testTarget:
         - xcode-gen-ios-unit-tests
         - xcode-gen-ios-ui-tests
-
-  xcode-gen-tvOS: 
+    xcode-gen-ios-unit-tests:
+      type: bundle.unit-tests
+      platform: iOS
+      sources: 
+        - path: xcode-gen-unit-tests
+    xcode-gen-ios-ui-tests:
+      type: bundle.ui-testing
+      platform: iOS
+      sources: 
+        - path: xcode-gen-ui-tests
+  xcode-gen-tvos: 
     type: application
     platform: tvOS
     deploymentTarget: "13.0"
@@ -28,13 +37,22 @@ targets:
       - target: Caching
       - target: ProfilesFeature
     scheme: 
-      target:
+      testTarget:
+        - xcode-gen-tvos-unit-tests
+        - xcode-gen-tvos-ui-tests
+    xcode-gen-tvos-unit-tests:
+      type: bundle.unit-tests
+      platform: tvOS
+      sources: 
+        - path: xcode-gen-unit-tests
+    xcode-gen-tvos-ui-tests:
+      type: bundle.ui-testing
+      platform: tvOS
+      sources: 
+        - path: xcode-gen-ui-tests
 include: 
-  - networking.yml
-  - path: modules/networking.yml
-    relativePaths: false
-  - caching.yml
-  - path: modules/caching.yml
+  - modules.yml
+  - path: modules/modules.yml
     relativePaths: false
   - features.yml
   - path: features/features.yml
