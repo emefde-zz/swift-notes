@@ -5,3 +5,8 @@ options:
   generateEmptyDirectories: true
 attributes: 
   ORGANIZATIONNAME: "mfd corp"
+include: 
+  - path: xcodegen/feature-template.yml
+    relativePaths: false
+  - path: xcodegen/profiles.yml
+    relativePaths: false
