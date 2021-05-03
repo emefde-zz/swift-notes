@@ -1,0 +1,7 @@
+name: Features
+options:
+  bundleIdPrefix: com.XcodegenExample.mfd
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+attributes: 
+  ORGANIZATIONNAME: "mfd corp"

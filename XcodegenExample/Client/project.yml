@@ -18,7 +18,3 @@ include:
     relativePaths: false
   - path: xcodegen/target-templates-tvos.yml
     relativePaths: false
-  - path: xcodegen/modules.yml
-    relativePaths: false
-  - path: xcodegen/features.yml
-    relativePaths: false

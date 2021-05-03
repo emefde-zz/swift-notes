@@ -1,0 +1,10 @@
+targets: 
+  xcode-gen-tvos: 
+    templates: 
+     - base-tvos
+  xcode-gen-tvos-unit-tests:
+    templates: 
+      - base-tvos-unit-tests
+  xcode-gen-tvos-ui-tests:
+    templates: 
+      - base-tvos-ui-tests

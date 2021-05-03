@@ -2,4 +2,6 @@
 
 set -e
 
-xcodegen generate
+xcodegen generate --spec ./Modules/project.yml
+xcodegen generate --spec ./Features/project.yml
+xcodegen generate --spec ./Client/project.yml

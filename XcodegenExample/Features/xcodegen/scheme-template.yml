@@ -1,0 +1,8 @@
+schemeTemplates:
+  App: 
+    build:
+      targets: 
+        ${scheme_name}: build
+    test: 
+      targets: 
+        - name: ${testTarget}
