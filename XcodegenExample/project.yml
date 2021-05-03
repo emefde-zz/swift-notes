@@ -4,6 +4,7 @@ options:
   deploymentTarget: 
     iOS: "13.0"
     tvOS: "13.0"
+  createIntermediateGroups: true
 attributes: 
   ORGANIZATIONNAME: "mfd corp"
 include: 
@@ -13,9 +14,9 @@ include:
     relativePaths: false
   - path: xcodegen/scheme-template.yml
     relativePaths: false
-  - path: xcodegen/target-template-ios.yml
+  - path: xcodegen/target-templates-ios.yml
     relativePaths: false
-  - path: xcodegen/target-template-tvos.yml
+  - path: xcodegen/target-templates-tvos.yml
     relativePaths: false
   - path: xcodegen/modules.yml
     relativePaths: false
