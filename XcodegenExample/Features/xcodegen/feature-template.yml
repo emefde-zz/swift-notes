@@ -1,7 +1,7 @@
 targetTemplates:
   feature:
     type: framework
-    platform: [iOS, tvOS]
+    platform: iOS
     sources: 
       - path: ${name}/Sources
         buildPhase: sources
@@ -9,11 +9,11 @@ targetTemplates:
         buildPhase: resources
   feature-unit-tests:
     type: bundle.unit-test
-    platform: [iOS, tvOS]
+    platform: iOS
     sources: 
-      - path: ${name}/Tests/Sources
+      - path: ${name}/Sources
         buildPhase: sources
-      - path: ${name}/Tests/Resources
+      - path: ${name}/Resources
         buildPhase: resources
     dependencies:
       - target: ${name}

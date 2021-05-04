@@ -2,7 +2,11 @@ name: Modules
 options:
   bundleIdPrefix: com.XcodegenExample.mfd
   createIntermediateGroups: true
-  generateEmptyDirectories: trues
+  generateEmptyDirectories: true
 attributes: 
   ORGANIZATIONNAME: "mfd corp"
-
+include: 
+  - path: xcodegen/module-template.yml
+    relativePaths: false
+  - path: xcodegen/networking.yml
+    relativePaths: false

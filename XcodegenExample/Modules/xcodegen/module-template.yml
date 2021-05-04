@@ -1,0 +1,13 @@
+targetTemplates:
+  module:
+    platform: iOS
+    type: framework
+    sources: 
+      - path: ${name}/Sources
+  module-unit-tests:
+    platform: iOS
+    type: bundle.unit-test
+    sources:
+      - path: ${name}/Sources
+    dependencies:
+      - target: ${name}
