@@ -1,11 +1,7 @@
 targetTemplates:
   frameworks:
     dependencies:
-      - framework: Caching.framework
-      implicit: true
-      - framework: Networking.framework
-      implicit: true
-      - framework: Profiles.framework
-      implicit: true
-      - framework: IAP.framework
-      implicit: true
+      - framework: NetworkingModule.framework
+        implicit: true
+      - framework: ProfilesFeature.framework
+        implicit: true

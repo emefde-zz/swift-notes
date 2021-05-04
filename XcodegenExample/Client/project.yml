@@ -8,6 +8,8 @@ options:
 attributes: 
   ORGANIZATIONNAME: "mfd corp"
 include: 
+  - path: xcodegen/frameworks.yml
+    relativePaths: false
   - path: xcodegen/tvos.yml
     relativePaths: false
   - path: xcodegen/ios.yml

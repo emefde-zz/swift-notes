@@ -3,6 +3,9 @@ options:
   bundleIdPrefix: com.XcodegenExample.mfd
   createIntermediateGroups: true
   generateEmptyDirectories: true
+  deploymentTarget: 
+    iOS: "13.0"
+    tvOS: "13.0"
 attributes: 
   ORGANIZATIONNAME: "mfd corp"
 include: 

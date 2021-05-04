@@ -6,14 +6,78 @@
 	objectVersion = 51;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		009FB58B8A59EB7794183EE4 /* NetworkingModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */; };
+		1EE93CE0F42976DE8B22D739 /* NetworkingModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */; };
+		3426B7042153A9C28AF109BE /* ProfilesFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; };
+		4CCADA1125CF593524716A64 /* ProfilesFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; };
+		60F1F9D7F983740416B0AA68 /* NetworkingModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		748C19B270AEB0049E1ECB0A /* ProfilesFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8717A94E7B43E840AAFEED82 /* ProfilesFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5CEA65C2E0A4274CE34C498 /* ClientCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195FDEC719524C73F90D79CB /* ClientCode.swift */; };
+		E5D1E5515E0233F1D1704158 /* NetworkingModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F125FD05AD29B756F4235E50 /* ClientCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195FDEC719524C73F90D79CB /* ClientCode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E88B0740A983EB8F628558E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E5D1E5515E0233F1D1704158 /* NetworkingModule.framework in Embed Frameworks */,
+				8717A94E7B43E840AAFEED82 /* ProfilesFeature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C68D7EA4A49302D432D0E286 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60F1F9D7F983740416B0AA68 /* NetworkingModule.framework in Embed Frameworks */,
+				748C19B270AEB0049E1ECB0A /* ProfilesFeature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		05FF782734291A9CFEA12728 /* xcode-gen-ios-ui-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "xcode-gen-ios-ui-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A57E7040C3E0E835FB26A76 /* xcode-gen-ios-unit-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "xcode-gen-ios-unit-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		195FDEC719524C73F90D79CB /* ClientCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCode.swift; sourceTree = "<group>"; };
 		40D684582334749660534C1F /* xcode-gen-tvos-unit-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "xcode-gen-tvos-unit-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7333D8C2931713B463EA253B /* ProfilesFeature.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProfilesFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54699923F3D67A59DD15664 /* xcode-gen-ios.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "xcode-gen-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkingModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5A8B762E93B3D0D560447 /* xcode-gen-tvos.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "xcode-gen-tvos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED484745A091A5C1E61BA8E2 /* xcode-gen-tvos-ui-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "xcode-gen-tvos-ui-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80555F1D6C914DCF41A3B943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				009FB58B8A59EB7794183EE4 /* NetworkingModule.framework in Frameworks */,
+				3426B7042153A9C28AF109BE /* ProfilesFeature.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83C504F5A1FB1C56C96B17BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE93CE0F42976DE8B22D739 /* NetworkingModule.framework in Frameworks */,
+				4CCADA1125CF593524716A64 /* ProfilesFeature.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		24B72EAA2E455D4FA208F7F6 /* Products */ = {
@@ -29,12 +93,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		56568FD20C269BE1100325E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */,
+				7333D8C2931713B463EA253B /* ProfilesFeature.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		76278803C242A64A6F0E0BE5 = {
 			isa = PBXGroup;
 			children = (
 				B421DA29B3EF18799822F927 /* XcodegenExample */,
 				D61F4873971C339BC59B9D0F /* XcodegenExampleUITests */,
 				AC9317863EFD9DCACBDA8CD9 /* XcodegenExampleUnitTests */,
+				56568FD20C269BE1100325E4 /* Frameworks */,
 				24B72EAA2E455D4FA208F7F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +123,7 @@
 		B421DA29B3EF18799822F927 /* XcodegenExample */ = {
 			isa = PBXGroup;
 			children = (
+				195FDEC719524C73F90D79CB /* ClientCode.swift */,
 			);
 			path = XcodegenExample;
 			sourceTree = "<group>";
@@ -83,6 +158,8 @@
 			buildConfigurationList = C7AA499C8928F9B12DD89A26 /* Build configuration list for PBXNativeTarget "xcode-gen-ios" */;
 			buildPhases = (
 				73D027E7D566A99B2F80D477 /* Sources */,
+				83C504F5A1FB1C56C96B17BA /* Frameworks */,
+				2E88B0740A983EB8F628558E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +220,8 @@
 			buildConfigurationList = F1962337E1E544E683F38282 /* Build configuration list for PBXNativeTarget "xcode-gen-tvos" */;
 			buildPhases = (
 				A2458E082CF3B6D4E0C66774 /* Sources */,
+				80555F1D6C914DCF41A3B943 /* Frameworks */,
+				C68D7EA4A49302D432D0E286 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F125FD05AD29B756F4235E50 /* ClientCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5CEA65C2E0A4274CE34C498 /* ClientCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
