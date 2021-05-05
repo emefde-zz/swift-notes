@@ -15,6 +15,11 @@
 		CE3982302642AFE4004E98A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39822E2642AFE4004E98A4 /* LaunchScreen.storyboard */; };
 		CE39823B2642AFE4004E98A4 /* SSLTSLExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39823A2642AFE4004E98A4 /* SSLTSLExampleTests.swift */; };
 		CE3982462642AFE4004E98A4 /* SSLTSLExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3982452642AFE4004E98A4 /* SSLTSLExampleUITests.swift */; };
+		CE39825B2642B0D1004E98A4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39825A2642B0D1004E98A4 /* NetworkClient.swift */; };
+		CE3983082642B412004E98A4 /* github.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = CE3983072642B412004E98A4 /* github.com.cer */; };
+		CE3983102642D983004E98A4 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39830F2642D983004E98A4 /* Certificate.swift */; };
+		CE3983152642D9C2004E98A4 /* CertificateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3983142642D9C2004E98A4 /* CertificateProvider.swift */; };
+		CE39831A2642DC87004E98A4 /* CertificateValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3983192642DC87004E98A4 /* CertificateValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		CE3982412642AFE4004E98A4 /* SSLTSLExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLTSLExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3982452642AFE4004E98A4 /* SSLTSLExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLTSLExampleUITests.swift; sourceTree = "<group>"; };
 		CE3982472642AFE4004E98A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE39825A2642B0D1004E98A4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CE3983072642B412004E98A4 /* github.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = github.com.cer; sourceTree = "<group>"; };
+		CE39830F2642D983004E98A4 /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		CE3983142642D9C2004E98A4 /* CertificateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateProvider.swift; sourceTree = "<group>"; };
+		CE3983192642DC87004E98A4 /* CertificateValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		CE3982222642AFE3004E98A4 /* SSLTSLExample */ = {
 			isa = PBXGroup;
 			children = (
+				CE39830E2642B42E004E98A4 /* Certs */,
 				CE3982232642AFE3004E98A4 /* AppDelegate.swift */,
 				CE3982252642AFE3004E98A4 /* SceneDelegate.swift */,
 				CE3982272642AFE3004E98A4 /* ViewController.swift */,
@@ -106,6 +117,10 @@
 				CE39822C2642AFE4004E98A4 /* Assets.xcassets */,
 				CE39822E2642AFE4004E98A4 /* LaunchScreen.storyboard */,
 				CE3982312642AFE4004E98A4 /* Info.plist */,
+				CE39825A2642B0D1004E98A4 /* NetworkClient.swift */,
+				CE39830F2642D983004E98A4 /* Certificate.swift */,
+				CE3983142642D9C2004E98A4 /* CertificateProvider.swift */,
+				CE3983192642DC87004E98A4 /* CertificateValidator.swift */,
 			);
 			path = SSLTSLExample;
 			sourceTree = "<group>";
@@ -126,6 +141,14 @@
 				CE3982472642AFE4004E98A4 /* Info.plist */,
 			);
 			path = SSLTSLExampleUITests;
+			sourceTree = "<group>";
+		};
+		CE39830E2642B42E004E98A4 /* Certs */ = {
+			isa = PBXGroup;
+			children = (
+				CE3983072642B412004E98A4 /* github.com.cer */,
+			);
+			path = Certs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +256,7 @@
 			files = (
 				CE3982302642AFE4004E98A4 /* LaunchScreen.storyboard in Resources */,
 				CE39822D2642AFE4004E98A4 /* Assets.xcassets in Resources */,
+				CE3983082642B412004E98A4 /* github.com.cer in Resources */,
 				CE39822B2642AFE3004E98A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3983102642D983004E98A4 /* Certificate.swift in Sources */,
 				CE3982282642AFE3004E98A4 /* ViewController.swift in Sources */,
+				CE3983152642D9C2004E98A4 /* CertificateProvider.swift in Sources */,
 				CE3982242642AFE3004E98A4 /* AppDelegate.swift in Sources */,
 				CE3982262642AFE3004E98A4 /* SceneDelegate.swift in Sources */,
+				CE39825B2642B0D1004E98A4 /* NetworkClient.swift in Sources */,
+				CE39831A2642DC87004E98A4 /* CertificateValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
