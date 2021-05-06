@@ -10,24 +10,49 @@ import XCTest
 
 class SSLTSLExampleTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    private let client = NetworkClient()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func test_Github() throws {
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let expectation = XCTestExpectation(description: "Github call did succeed!")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        makeGithubCall { (result, error) in
+            guard result == true, error == nil else {
+                XCTFail(error?.localizedDescription ?? "Github call did fail")
+                return
+            }
+
+            expectation.fulfill()
         }
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+
+    func test_StackOverflow() throws {
+
+        let expectation = XCTestExpectation(description: "StackOverflow call did fail!")
+
+        makeStackOverflowCall { (result, error) in
+            guard result == true, error == nil else {
+                expectation.fulfill()
+                return
+            }
+
+            XCTFail("StackOverflow call should not succeed")
+        }
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+
+    private func makeGithubCall(completion: @escaping (Bool, Error?) -> Void) {
+        client.makeRequest(URL(string: "https://github.com")!, completion: completion)
+    }
+
+
+    private func makeStackOverflowCall(completion: @escaping (Bool, Error?) -> Void) {
+        client.makeRequest(URL(string: "https://stackoverflow.com")!, completion: completion)
     }
 
 }

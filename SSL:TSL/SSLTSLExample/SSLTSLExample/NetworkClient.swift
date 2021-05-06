@@ -15,12 +15,12 @@ final class NetworkClient: NSObject {
     }()
 
 
-    func makeRequest(_ url: URL, completion: @escaping (String) -> Void) {
+    func makeRequest(_ url: URL, completion: @escaping (Bool, Error?) -> Void) {
         session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
-                completion("wazzup")
+                completion(error != nil ? false : true, error)
             }
-        }
+        }.resume()
     }
 
 }
@@ -33,7 +33,23 @@ extension NetworkClient: URLSessionDelegate {
         didReceive challenge: URLAuthenticationChallenge,
         completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
     ) {
+        guard let trust = challenge.protectionSpace.serverTrust,
+              SecTrustGetCertificateCount(trust) > 0,
+              let certificate = SecTrustGetCertificateAtIndex(trust, 0),
+              let local = try? CertificateProvider.fetchCertificate(name: "github.com")
+        else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
 
+        let data = SecCertificateCopyData(certificate) as Data
+        let isValid = CertificateValidator.validate(local: local, against: data, using: trust)
+        guard isValid else {
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
+        completionHandler(.useCredential, URLCredential(trust: trust))
     }
 
 }
