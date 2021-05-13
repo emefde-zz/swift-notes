@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+xcodegen generate --spec ./Modules/project.yml
+xcodegen generate --spec ./Features/project.yml
+xcodegen generate --spec ./Client/project.yml

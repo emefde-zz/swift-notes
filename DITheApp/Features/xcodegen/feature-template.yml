@@ -1,0 +1,20 @@
+targetTemplates:
+  feature:
+    type: framework
+    platform: iOS
+    sources: 
+      - path: ${name}/Sources
+        buildPhase: sources
+      - path: ${name}/Resources
+        buildPhase: resources
+  feature-unit-tests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: 
+      - path: ${name}/Sources
+        buildPhase: sources
+      - path: ${name}/Resources
+        buildPhase: resources
+    dependencies:
+      - target: ${name}
+      

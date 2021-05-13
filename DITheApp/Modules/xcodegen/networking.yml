@@ -1,0 +1,11 @@
+targets:
+  NetworkingModule:
+    templates:
+      - module
+    templateAttributes:
+      name: NetworkingModule
+  NetworkingModuleTests:
+    templates:
+      - module-unit-tests
+    templateAttributes:
+      name: NetworkingModuleTests

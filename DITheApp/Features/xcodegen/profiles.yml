@@ -1,0 +1,11 @@
+targets:
+  ProfilesFeature:
+    templates: 
+      - feature
+    templateAttributes:
+      name: ProfilesFeature
+  ProfilesFeatureTests:
+    templates:
+      - feature-unit-tests
+    templateAttributes:
+      name: ProfilesFeatureTests

@@ -1,0 +1,7 @@
+targetTemplates:
+  frameworks:
+    dependencies:
+      - framework: NetworkingModule.framework
+        implicit: true
+      - framework: ProfilesFeature.framework
+        implicit: true
