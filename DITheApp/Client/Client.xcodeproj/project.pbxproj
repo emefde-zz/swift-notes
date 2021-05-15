@@ -14,6 +14,8 @@
 		60F1F9D7F983740416B0AA68 /* NetworkingModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		748C19B270AEB0049E1ECB0A /* ProfilesFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8717A94E7B43E840AAFEED82 /* ProfilesFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7333D8C2931713B463EA253B /* ProfilesFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE371FC8264FB1580012899E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371FC7264FB1580012899E /* Router.swift */; };
+		CE371FC9264FB1580012899E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371FC7264FB1580012899E /* Router.swift */; };
 		CE38D63D264D739500E21A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38D63C264D739500E21A77 /* AppDelegate.swift */; };
 		CE38D63E264D739500E21A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38D63C264D739500E21A77 /* AppDelegate.swift */; };
 		D5CEA65C2E0A4274CE34C498 /* ClientCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195FDEC719524C73F90D79CB /* ClientCode.swift */; };
@@ -57,6 +59,7 @@
 		A54699923F3D67A59DD15664 /* xcode-gen-ios.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "xcode-gen-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3451AF28F1EA9A5E393179 /* NetworkingModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkingModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5A8B762E93B3D0D560447 /* xcode-gen-tvos.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "xcode-gen-tvos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE371FC7264FB1580012899E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE38D63C264D739500E21A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED484745A091A5C1E61BA8E2 /* xcode-gen-tvos-ui-tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "xcode-gen-tvos-ui-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,10 +129,43 @@
 		B421DA29B3EF18799822F927 /* XcodegenExample */ = {
 			isa = PBXGroup;
 			children = (
+				CE371FC0264FB1300012899E /* Sources */,
+				CE371FBF264FB1210012899E /* Resources */,
 				195FDEC719524C73F90D79CB /* ClientCode.swift */,
-				CE38D63C264D739500E21A77 /* AppDelegate.swift */,
 			);
 			path = XcodegenExample;
+			sourceTree = "<group>";
+		};
+		CE371FBF264FB1210012899E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE371FC0264FB1300012899E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE371FC6264FB1460012899E /* Router */,
+				CE371FC1264FB1400012899E /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE371FC1264FB1400012899E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE38D63C264D739500E21A77 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE371FC6264FB1460012899E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE371FC7264FB1580012899E /* Router.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D61F4873971C339BC59B9D0F /* XcodegenExampleUITests */ = {
@@ -288,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE38D63D264D739500E21A77 /* AppDelegate.swift in Sources */,
+				CE371FC8264FB1580012899E /* Router.swift in Sources */,
 				F125FD05AD29B756F4235E50 /* ClientCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE38D63E264D739500E21A77 /* AppDelegate.swift in Sources */,
+				CE371FC9264FB1580012899E /* Router.swift in Sources */,
 				D5CEA65C2E0A4274CE34C498 /* ClientCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
