@@ -32,38 +32,64 @@ enum RouteError: Error, CustomDebugStringConvertible {
 
 protocol RouteComponent {
 
-    typealias Key = String
+    associatedtype Payload
     typealias ID = String
 
     var id: ID { get }
-    var payload: [Key: Any] { get }
+    var payload: Payload { get }
+
+}
+
+
+struct AnyRouteComponent<T>: RouteComponent {
+
+    let id: ID
+    let payload: T
 
 }
 
 protocol Route {
 
-    init?(components: RouteComponent)
+    associatedtype T
 
-    var components: RouteComponent? { get }
+    init(components: AnyRouteComponent<T>)
 
-}
-
-
-extension Route {
-
-    init(components: RouteComponent) throws {
-        guard let route = Self(components: components) else {
-            throw RouteError.routeNotFound
-        }
-
-        self = route
-    }
+    var components: AnyRouteComponent<T> { get }
 
 }
 
 
 protocol Router: AnyObject {
 
-    func route(to: Route)
+    func route<R: Route>(to route: R)
 
 }
+
+
+final class LoginRouter: Router {
+
+    func route<R>(to route: R) where R : Route {
+
+    }
+
+}
+
+struct User {
+
+    let name: String
+    let email: String
+
+}
+
+
+struct AnyRoute<T>: Route {
+
+    let components: AnyRouteComponent<T>
+
+    init(components: AnyRouteComponent<T>) {
+        self.components = components
+    }
+}
+
+
+let loginRoute = AnyRoute<User>(components: AnyRouteComponent<User>(id: "login.route", payload: <#T##User#>)
