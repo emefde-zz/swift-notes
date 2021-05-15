@@ -1,11 +1,3 @@
-//
-//  Router.swift
-//  Client
-//
-//  Created by Mateusz Fidos on 15/05/2021.
-//  Copyright © 2021 mfd corp. All rights reserved.
-//
-
 import Foundation
 
 enum Strings {
@@ -93,5 +85,16 @@ struct AnyRoute<T>: Route {
 
 
 let loginRoutePayload = User(name: "mateusz", email: "m@f.com")
-let loginRouteComponent = AnyRouteComponent<User>(id: "login.route", payload: loginRoutePayload)
-let loginRoute = AnyRoute<User>(components: loginRouteComponent)
+let loginRouteComponent = AnyRouteComponent(id: "login.route", payload: loginRoutePayload)
+let loginRoute = AnyRoute(components: loginRouteComponent)
+
+print(type(of: loginRoute))
+
+let loginRouter = LoginRouter()
+loginRouter.route(to: loginRoute)
+
+
+protocol Coordinator {
+    func start()
+}
+
