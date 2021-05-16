@@ -122,14 +122,14 @@ class NavigationPresentationContext: PresentationContext {
 
 final class SignInCoordinator: Coordinator, Router {
 
-    var onDismiss: (() -> Void)?
+    var onDismiss: ((AnyRoute<Void>) -> Void)?
 
     func route<R>(to route: R) where R : Route {
         switch route.context.type {
         case .nextRoute:
             show(route: route)
         case .previousRoute:
-            onDismiss?()
+            onDismiss?(AnyRoute(route: route))
         }
     }
 
@@ -140,14 +140,28 @@ final class SignInCoordinator: Coordinator, Router {
 
 
     private func dismiss<R: Route>(route: R) {
-        onDismiss?()
+        onDismiss?(AnyRoute(route: route))
     }
 
 
     func start() {
         let signInViewController = SignInViewController()
         let singInInteractor = SignInInteractor(router: self)
-        singInInteractor.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            singInInteractor.dismiss()
+        }
+    }
+
+}
+
+struct AnyRoute<T>: Route {
+
+    let context: RouteContext
+    let components: AnyRouteComponent<T>?
+
+    init<R: Route>(route: R) {
+        self.components = route.components as? AnyRouteComponent<T>
+        self.context = route.context
     }
 
 }
@@ -162,7 +176,7 @@ struct SingInRoute: Route {
 
 struct DismissSingInRoute: Route {
 
-    var context: RouteContext { RouteContext(id: "dismiss.sign.in", type: .previousRoute) }
+    var context: RouteContext { RouteContext(id: "sign.in", type: .previousRoute) }
     var components: AnyRouteComponent<Void>? { nil }
 
 }
@@ -272,10 +286,7 @@ final class BaseCoordinator: Coordinator, Router {
         switch ValidRoutes(rawValue: route.context.id) {
         case .signIn:
             let coordinator = SignInCoordinator()
-            coordinator.onDismiss = { [weak self] in
-                print("did dismiss route \(route)")
-                self?.clear(route: route)
-            }
+            coordinator.onDismiss = { [weak self] in self?.clear(route: $0) }
             register(coordinator: coordinator, for: route)
             coordinator.start()
         default:
