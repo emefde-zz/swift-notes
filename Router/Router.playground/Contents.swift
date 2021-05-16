@@ -87,13 +87,6 @@ struct User {
 
 }
 
-protocol RouterStrategy {
-
-
-
-}
-
-
 protocol Coordinator {
     func start()
 }
@@ -129,7 +122,7 @@ class NavigationPresentationContext: PresentationContext {
 
 final class SignInCoordinator: Coordinator, Router {
 
-    var onDismiss: ((Route) -> Void)?
+    var onDismiss: (() -> Void)?
 
     func route<R>(to route: R) where R : Route {
         switch route.context.type {
@@ -190,11 +183,42 @@ final class SignInViewController: UIViewController {
 }
 
 
+protocol CoordinatorStore {
+
+    typealias Key = String
+
+    var store: [Key: FlowCoordinator] { get }
+
+    func resolveCoordinator<R: Route>(_ route: R) -> FlowCoordinator?
+    func register<R: Route>(coordinator: FlowCoordinator, for route: R)
+    func clear<R: Route>(route: R)
+
+}
+
+final class ConcreteCoordinatorStore: CoordinatorStore {
+
+    private(set) var store: [String: FlowCoordinator] = [:]
+
+    func resolveCoordinator<R: Route>(_ route: R) -> FlowCoordinator? {
+        store[route.context.id]
+    }
+
+
+    func register<R: Route>(coordinator: FlowCoordinator, for route: R) {
+        store[route.context.id] = coordinator
+    }
+
+
+    func clear<R: Route>(route: R) {
+        store[route.context.id] = nil
+    }
+
+}
+
+typealias FlowCoordinator = Coordinator & Router
 final class BaseCoordinator: Coordinator, Router {
 
-    typealias FlowCoordinator = Coordinator & Router
-
-    private var store: [String: FlowCoordinator] = [:]
+    private let store: ConcreteCoordinatorStore = ConcreteCoordinatorStore()
 
     private enum ValidRoutes: String {
         case signIn = "sign.in"
@@ -221,12 +245,20 @@ final class BaseCoordinator: Coordinator, Router {
 
 
     private func resolveCoordinator<R: Route>(_ route: R) -> FlowCoordinator? {
-        store[route.context.id]
+        store.resolveCoordinator(route)
     }
 
 
     private func register<R: Route>(coordinator: FlowCoordinator, for route: R) {
-        store[route.context.id] = coordinator
+        store.register(coordinator: coordinator, for: route)
+        print(store.store)
+    }
+
+
+    private func clear<R: Route>(route: R) {
+        store.clear(route: route)
+        print(store.store.contains(where: { (key, value) in key == "sign.in" }))
+        print(store.store)
     }
 
 
@@ -240,8 +272,9 @@ final class BaseCoordinator: Coordinator, Router {
         switch ValidRoutes(rawValue: route.context.id) {
         case .signIn:
             let coordinator = SignInCoordinator()
-            coordinator.onDismiss = {
+            coordinator.onDismiss = { [weak self] in
                 print("did dismiss route \(route)")
+                self?.clear(route: route)
             }
             register(coordinator: coordinator, for: route)
             coordinator.start()
