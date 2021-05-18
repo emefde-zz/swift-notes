@@ -10,8 +10,12 @@ import UIKit
 
 enum OnboardingAssembler {
 
-    static func assemble() -> UIViewController {
-        OnboardingViewController(interactor: OnboardingInteractor())
+    static func assemble(with router: Router) -> UIViewController {
+        OnboardingViewController(
+            interactor: OnboardingInteractor(
+                router: router
+            )
+        )
     }
 
 }

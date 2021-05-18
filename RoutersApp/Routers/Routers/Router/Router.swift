@@ -17,44 +17,12 @@ protocol RouteComponent {
 
 }
 
-
-struct AnyRouteComponent<T>: RouteComponent {
-
-    let id: ID
-    let payload: T
-
-}
-
-
-struct RouteContext {
-
-    let id: String
-    let type: RouteDestinationType
-
-    init(
-        id: String = UUID().uuidString,
-        type: RouteDestinationType = .nextRoute
-    ) {
-        self.id = id
-        self.type = type
-    }
-
-}
-
-
-enum RouteDestinationType {
-
-    case nextRoute
-    case previousRoute
-
-}
-
 protocol Route {
 
-    associatedtype T
+    associatedtype T: RouteComponent
 
-    var context: RouteContext { get }
-    var components: AnyRouteComponent<T>? { get }
+    var name: String { get }
+    var components: T? { get }
 
 }
 
@@ -62,39 +30,14 @@ protocol Route {
 protocol Router: AnyObject {
 
     func route<R: Route>(to route: R)
-
-}
-
-struct AnyRoute<T>: Route {
-
-    let context: RouteContext
-    let components: AnyRouteComponent<T>?
-
-    init<R: Route>(route: R) {
-        self.components = route.components as? AnyRouteComponent<T>
-        self.context = route.context
-    }
+    func dismiss<R: Route>(with route: R)
 
 }
 
 
-var onDismiss: ((AnyRoute<Void>) -> Void)?
+struct AnyRouteComponent<T>: RouteComponent {
 
-func route<R>(to route: R) where R : Route {
-    switch route.context.type {
-    case .nextRoute:
-        show(route: route)
-    case .previousRoute:
-        onDismiss?(AnyRoute(route: route))
-    }
-}
+    let id: ID
+    let payload: T
 
-
-private func show<R: Route>(route: R) {
-
-}
-
-
-private func dismiss<R: Route>(route: R) {
-    onDismiss?(AnyRoute(route: route))
 }

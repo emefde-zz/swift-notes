@@ -10,9 +10,21 @@ import Foundation
 
 final class OnboardingInteractor {
 
+    let router: Router
+
+
+    init(router: Router) {
+        self.router = router
+    }
+
     
-    func signIn() { }
-    func signUp() { }
+    func signIn() {
+        router.route(to: SignInRoute())
+    }
+
+    func signUp() {
+        router.route(to: SignUpRoute())
+    }
 
 
 }

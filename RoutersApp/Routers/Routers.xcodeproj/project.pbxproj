@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D55092653FA970062E054 /* OnboardingAssembler.swift */; };
 		CE7D552C265404390062E054 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D552B265404390062E054 /* Router.swift */; };
+		CE7D5532265408550062E054 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5531265408550062E054 /* Routes.swift */; };
 		CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */; };
 		CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */; };
 		CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D326527ECA0051BE8F /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		CE7D55092653FA970062E054 /* OnboardingAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembler.swift; sourceTree = "<group>"; };
 		CE7D552B265404390062E054 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE7D5531265408550062E054 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		CEF9B3D026527ECA0051BE8F /* Routers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +97,18 @@
 		CE7D552A265404230062E054 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				CE7D5530265408400062E054 /* Routes */,
 				CE7D552B265404390062E054 /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		CE7D5530265408400062E054 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D5531265408550062E054 /* Routes.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		CEBF75B02653F8B7001ACF2F /* Protocols */ = {
@@ -344,6 +355,7 @@
 				CE7D552C265404390062E054 /* Router.swift in Sources */,
 				CEF9B444265282970051BE8F /* SceneEventObserver.swift in Sources */,
 				CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */,
+				CE7D5532265408550062E054 /* Routes.swift in Sources */,
 				CEF9B41926527FA90051BE8F /* FlowCoordinator.swift in Sources */,
 				CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */,
 				CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */,

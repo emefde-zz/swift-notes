@@ -11,12 +11,13 @@ import UIKit
 
 final class AppFlowCoordinator:
     FlowCoordinator,
-    Coordinator {
+    Coordinator,
+    Router {
 
     var parent: FlowCoordinator? { nil }
 
     private var window: UIWindow?
-    private lazy var rootViewController = OnboardingAssembler.assemble()
+    private lazy var rootViewController = OnboardingAssembler.assemble(with: self)
     private(set) weak var presentedViewController: UIViewController?
     private lazy var presentingNavigationController: UINavigationController = UINavigationController()
 
@@ -31,5 +32,8 @@ final class AppFlowCoordinator:
         window?.makeKeyAndVisible()
         presentedViewController = rootViewController
     }
+
+    func route<R>(to route: R) where R : Route { print(route.name) }
+    func dismiss<R>(with route: R) where R : Route { print(route.name) }
 
 }
