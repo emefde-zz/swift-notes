@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D55092653FA970062E054 /* OnboardingAssembler.swift */; };
+		CE7D552C265404390062E054 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D552B265404390062E054 /* Router.swift */; };
+		CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */; };
+		CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */; };
 		CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D326527ECA0051BE8F /* AppDelegate.swift */; };
 		CEF9B3D626527ECA0051BE8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D526527ECA0051BE8F /* SceneDelegate.swift */; };
-		CEF9B3D826527ECA0051BE8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D726527ECA0051BE8F /* ViewController.swift */; };
+		CEF9B3D826527ECA0051BE8F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D726527ECA0051BE8F /* OnboardingViewController.swift */; };
 		CEF9B3EB26527ECB0051BE8F /* RoutersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3EA26527ECB0051BE8F /* RoutersTests.swift */; };
 		CEF9B3F626527ECB0051BE8F /* RoutersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3F526527ECB0051BE8F /* RoutersUITests.swift */; };
 		CEF9B41426527F7D0051BE8F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B41326527F7D0051BE8F /* Coordinator.swift */; };
 		CEF9B41926527FA90051BE8F /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B41826527FA90051BE8F /* FlowCoordinator.swift */; };
-		CEF9B41E2652806C0051BE8F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B41D2652806C0051BE8F /* AppCoordinator.swift */; };
+		CEF9B41E2652806C0051BE8F /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B41D2652806C0051BE8F /* AppFlowCoordinator.swift */; };
 		CEF9B43F265282820051BE8F /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B43E265282820051BE8F /* Application.swift */; };
 		CEF9B444265282970051BE8F /* SceneEventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B443265282970051BE8F /* SceneEventObserver.swift */; };
 		CEF9B451265285770051BE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF9B3DC26527ECA0051BE8F /* Assets.xcassets */; };
@@ -39,10 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE7D55092653FA970062E054 /* OnboardingAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembler.swift; sourceTree = "<group>"; };
+		CE7D552B265404390062E054 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
+		CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		CEF9B3D026527ECA0051BE8F /* Routers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF9B3D326527ECA0051BE8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF9B3D526527ECA0051BE8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEF9B3D726527ECA0051BE8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEF9B3D726527ECA0051BE8F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CEF9B3DC26527ECA0051BE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF9B3DF26527ECA0051BE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF9B3E126527ECA0051BE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +62,7 @@
 		CEF9B3F726527ECB0051BE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF9B41326527F7D0051BE8F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CEF9B41826527FA90051BE8F /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
-		CEF9B41D2652806C0051BE8F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CEF9B41D2652806C0051BE8F /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEF9B43E265282820051BE8F /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		CEF9B443265282970051BE8F /* SceneEventObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneEventObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +92,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7D552A265404230062E054 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D552B265404390062E054 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CEBF75B02653F8B7001ACF2F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9B41326527F7D0051BE8F /* Coordinator.swift */,
+				CEF9B41826527FA90051BE8F /* FlowCoordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CEBF75B92653F90E001ACF2F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9B3D726527ECA0051BE8F /* OnboardingViewController.swift */,
+				CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */,
+				CE7D55092653FA970062E054 /* OnboardingAssembler.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		CEF9B3C726527ECA0051BE8F = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF9B40726527F250051BE8F /* App */,
+				CE7D552A265404230062E054 /* Router */,
 				CEF9B40626527F1B0051BE8F /* Coordinators */,
 				CEF9B40B26527F320051BE8F /* Views */,
 				CEF9B40F26527F3F0051BE8F /* Resource */,
@@ -136,9 +172,9 @@
 		CEF9B40626527F1B0051BE8F /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				CEF9B41326527F7D0051BE8F /* Coordinator.swift */,
-				CEF9B41826527FA90051BE8F /* FlowCoordinator.swift */,
-				CEF9B41D2652806C0051BE8F /* AppCoordinator.swift */,
+				CEBF75B02653F8B7001ACF2F /* Protocols */,
+				CEF9B41D2652806C0051BE8F /* AppFlowCoordinator.swift */,
+				CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -157,7 +193,7 @@
 		CEF9B40B26527F320051BE8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CEF9B3D726527ECA0051BE8F /* ViewController.swift */,
+				CEBF75B92653F90E001ACF2F /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,14 +337,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF9B41E2652806C0051BE8F /* AppCoordinator.swift in Sources */,
+				CEF9B41E2652806C0051BE8F /* AppFlowCoordinator.swift in Sources */,
 				CEF9B43F265282820051BE8F /* Application.swift in Sources */,
 				CEF9B41426527F7D0051BE8F /* Coordinator.swift in Sources */,
-				CEF9B3D826527ECA0051BE8F /* ViewController.swift in Sources */,
+				CEF9B3D826527ECA0051BE8F /* OnboardingViewController.swift in Sources */,
+				CE7D552C265404390062E054 /* Router.swift in Sources */,
 				CEF9B444265282970051BE8F /* SceneEventObserver.swift in Sources */,
+				CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */,
 				CEF9B41926527FA90051BE8F /* FlowCoordinator.swift in Sources */,
+				CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */,
 				CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */,
 				CEF9B3D626527ECA0051BE8F /* SceneDelegate.swift in Sources */,
+				CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

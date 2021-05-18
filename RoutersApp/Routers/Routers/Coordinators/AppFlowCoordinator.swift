@@ -16,7 +16,7 @@ final class AppFlowCoordinator:
     var parent: FlowCoordinator? { nil }
 
     private var window: UIWindow?
-    private lazy var rootViewController = ViewController()
+    private lazy var rootViewController = OnboardingAssembler.assemble()
     private(set) weak var presentedViewController: UIViewController?
     private lazy var presentingNavigationController: UINavigationController = UINavigationController()
 
