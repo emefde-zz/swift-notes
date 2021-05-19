@@ -19,7 +19,7 @@ final class SignInInteractor {
 
 
     func begin() {
-        
+        router.route(to: AddNameRoute())
     }
 
 }

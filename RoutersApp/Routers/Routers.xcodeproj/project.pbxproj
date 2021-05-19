@@ -17,6 +17,9 @@
 		CEAAE6462654F601008F9136 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE6452654F601008F9136 /* SignInViewController.swift */; };
 		CEAAE64E2654F627008F9136 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE64D2654F627008F9136 /* SignInInteractor.swift */; };
 		CEAAE6532654F643008F9136 /* SignInAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE6522654F643008F9136 /* SignInAssembler.swift */; };
+		CEAAE65E2655060C008F9136 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE65D2655060C008F9136 /* User.swift */; };
+		CEAAE663265506E2008F9136 /* PopViewControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE662265506E2008F9136 /* PopViewControllerStrategy.swift */; };
+		CEAAE66826550755008F9136 /* PopToRootViewControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE66726550755008F9136 /* PopToRootViewControllerStrategy.swift */; };
 		CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */; };
 		CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */; };
 		CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D326527ECA0051BE8F /* AppDelegate.swift */; };
@@ -61,6 +64,9 @@
 		CEAAE6452654F601008F9136 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CEAAE64D2654F627008F9136 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		CEAAE6522654F643008F9136 /* SignInAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAssembler.swift; sourceTree = "<group>"; };
+		CEAAE65D2655060C008F9136 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEAAE662265506E2008F9136 /* PopViewControllerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewControllerStrategy.swift; sourceTree = "<group>"; };
+		CEAAE66726550755008F9136 /* PopToRootViewControllerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootViewControllerStrategy.swift; sourceTree = "<group>"; };
 		CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		CEF9B3D026527ECA0051BE8F /* Routers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +119,8 @@
 			children = (
 				CE2A19892654E7B800BE5C15 /* Protocol */,
 				CE2A19602654E60000BE5C15 /* PushViewControllerStrategy.swift */,
+				CEAAE662265506E2008F9136 /* PopViewControllerStrategy.swift */,
+				CEAAE66726550755008F9136 /* PopToRootViewControllerStrategy.swift */,
 			);
 			path = Strategies;
 			sourceTree = "<group>";
@@ -161,6 +169,14 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		CEAAE65C26550600008F9136 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEAAE65D2655060C008F9136 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CEBF75B02653F8B7001ACF2F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +223,7 @@
 				CEF9B40726527F250051BE8F /* App */,
 				CE7D552A265404230062E054 /* Router */,
 				CEF9B40626527F1B0051BE8F /* Coordinators */,
+				CEAAE65C26550600008F9136 /* Models */,
 				CEF9B40B26527F320051BE8F /* Views */,
 				CEF9B40F26527F3F0051BE8F /* Resource */,
 			);
@@ -404,6 +421,7 @@
 				CEF9B41E2652806C0051BE8F /* AppFlowCoordinator.swift in Sources */,
 				CEAAE6402654F21C008F9136 /* Constants.swift in Sources */,
 				CE2A19852654E7A100BE5C15 /* RouterStrategy.swift in Sources */,
+				CEAAE66826550755008F9136 /* PopToRootViewControllerStrategy.swift in Sources */,
 				CEF9B43F265282820051BE8F /* Application.swift in Sources */,
 				CEF9B41426527F7D0051BE8F /* Coordinator.swift in Sources */,
 				CEAAE63B2654E983008F9136 /* ModuleAssembler.swift in Sources */,
@@ -414,6 +432,7 @@
 				CE7D5532265408550062E054 /* Routes.swift in Sources */,
 				CEF9B41926527FA90051BE8F /* FlowCoordinator.swift in Sources */,
 				CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */,
+				CEAAE663265506E2008F9136 /* PopViewControllerStrategy.swift in Sources */,
 				CE2A19612654E60000BE5C15 /* PushViewControllerStrategy.swift in Sources */,
 				CEAAE6532654F643008F9136 /* SignInAssembler.swift in Sources */,
 				CEAAE6462654F601008F9136 /* SignInViewController.swift in Sources */,
@@ -421,6 +440,7 @@
 				CEF9B3D626527ECA0051BE8F /* SceneDelegate.swift in Sources */,
 				CEAAE64E2654F627008F9136 /* SignInInteractor.swift in Sources */,
 				CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */,
+				CEAAE65E2655060C008F9136 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

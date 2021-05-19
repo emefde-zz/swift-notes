@@ -24,9 +24,38 @@ struct SignUpRoute: Route {
 }
 
 
+struct AddNameRoute: Route {
+
+    var name: String { "add.name.route" }
+    var components: AnyRouteComponent<Void>? { nil }
+
+}
+
+struct AddEmailRoute: Route {
+
+    var name: String { "add.email.route" }
+    var components: AnyRouteComponent<String>?
+
+    init(name: String) {
+        self.components = AnyRouteComponent(
+            id: UUID().uuidString,
+            payload: name
+        )
+    }
+
+}
+
+
 struct Dismiss<T>: Route {
 
     var name: String { "dismiss" }
     var components: AnyRouteComponent<T>?
+
+    init(payload: T) {
+        self.components = AnyRouteComponent(
+            id: UUID().uuidString,
+            payload: payload
+        )
+    }
 
 }

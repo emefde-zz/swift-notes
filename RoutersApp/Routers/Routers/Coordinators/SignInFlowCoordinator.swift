@@ -54,7 +54,7 @@ private extension SignInFlowCoordinator {
 
     enum ValidRoutes: String {
 
-        case name = "name.route"
+        case name = "add.name.route"
 
     }
 
