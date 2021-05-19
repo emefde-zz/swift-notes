@@ -1,15 +1,14 @@
 //
-//  SignInFlowCoordinator.swift
+//  AddNameFlowCoordinator.swift
 //  Routers
 //
-//  Created by Mateusz Fidos on 18/05/2021.
+//  Created by Mateusz Fidos on 19/05/2021.
 //
 
-import Foundation
 import UIKit
 
 
-final class SignInFlowCoordinator:
+final class AddNameFlowCoordinator:
     FlowCoordinator,
     Coordinator,
     Router {
@@ -20,7 +19,7 @@ final class SignInFlowCoordinator:
 
     init(
         parent: FlowCoordinator,
-        navigationController: UINavigationController
+        navigationController: UINavigationController?
     ) {
         self.parent = parent
         self.navigationController = navigationController
@@ -30,18 +29,15 @@ final class SignInFlowCoordinator:
     public func start() {
         PushViewControllerStrategy(
             navigationController: navigationController,
-            module: SignInAssembler.assemble(with: self)
+            module: AddNameAssembler.assemble(with: self)
         ).start()
     }
 
 
     func route<R>(to route: R) where R : Route {
         switch ValidRoutes.init(rawValue: route.name) {
-        case .name:
-            AddNameFlowCoordinator(
-                parent: self,
-                navigationController: navigationController
-            ).start()
+        case .email:
+            break
         default:
             assertionFailure(Constants.Assertion.invalidRouteAssertion)
         }
@@ -53,11 +49,11 @@ final class SignInFlowCoordinator:
 }
 
 
-private extension SignInFlowCoordinator {
+private extension AddNameFlowCoordinator {
 
     enum ValidRoutes: String {
 
-        case name = "add.name.route"
+        case email = "add.email.route"
 
     }
 

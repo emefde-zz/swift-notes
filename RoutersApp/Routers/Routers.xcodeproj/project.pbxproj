@@ -20,6 +20,10 @@
 		CEAAE65E2655060C008F9136 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE65D2655060C008F9136 /* User.swift */; };
 		CEAAE663265506E2008F9136 /* PopViewControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE662265506E2008F9136 /* PopViewControllerStrategy.swift */; };
 		CEAAE66826550755008F9136 /* PopToRootViewControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE66726550755008F9136 /* PopToRootViewControllerStrategy.swift */; };
+		CEAAE66D265507F4008F9136 /* AddNameFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE66C265507F4008F9136 /* AddNameFlowCoordinator.swift */; };
+		CEAAE6732655082A008F9136 /* AddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE6722655082A008F9136 /* AddNameViewController.swift */; };
+		CEAAE67B26550835008F9136 /* AddNameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE67A26550835008F9136 /* AddNameInteractor.swift */; };
+		CEAAE68026550846008F9136 /* AddNameAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE67F26550846008F9136 /* AddNameAssembler.swift */; };
 		CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */; };
 		CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */; };
 		CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9B3D326527ECA0051BE8F /* AppDelegate.swift */; };
@@ -67,6 +71,10 @@
 		CEAAE65D2655060C008F9136 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEAAE662265506E2008F9136 /* PopViewControllerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewControllerStrategy.swift; sourceTree = "<group>"; };
 		CEAAE66726550755008F9136 /* PopToRootViewControllerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootViewControllerStrategy.swift; sourceTree = "<group>"; };
+		CEAAE66C265507F4008F9136 /* AddNameFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameFlowCoordinator.swift; sourceTree = "<group>"; };
+		CEAAE6722655082A008F9136 /* AddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewController.swift; sourceTree = "<group>"; };
+		CEAAE67A26550835008F9136 /* AddNameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameInteractor.swift; sourceTree = "<group>"; };
+		CEAAE67F26550846008F9136 /* AddNameAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameAssembler.swift; sourceTree = "<group>"; };
 		CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
 		CEBF75BA2653F91D001ACF2F /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		CEF9B3D026527ECA0051BE8F /* Routers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +185,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CEAAE67126550818008F9136 /* AddName */ = {
+			isa = PBXGroup;
+			children = (
+				CEAAE6722655082A008F9136 /* AddNameViewController.swift */,
+				CEAAE67A26550835008F9136 /* AddNameInteractor.swift */,
+				CEAAE67F26550846008F9136 /* AddNameAssembler.swift */,
+			);
+			path = AddName;
+			sourceTree = "<group>";
+		};
 		CEBF75B02653F8B7001ACF2F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +272,7 @@
 				CEBF75B02653F8B7001ACF2F /* Protocols */,
 				CEF9B41D2652806C0051BE8F /* AppFlowCoordinator.swift */,
 				CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */,
+				CEAAE66C265507F4008F9136 /* AddNameFlowCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -273,6 +292,7 @@
 		CEF9B40B26527F320051BE8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEAAE67126550818008F9136 /* AddName */,
 				CEAAE6442654F5E4008F9136 /* SignIn */,
 				CEBF75B92653F90E001ACF2F /* Onboarding */,
 			);
@@ -419,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF9B41E2652806C0051BE8F /* AppFlowCoordinator.swift in Sources */,
+				CEAAE67B26550835008F9136 /* AddNameInteractor.swift in Sources */,
 				CEAAE6402654F21C008F9136 /* Constants.swift in Sources */,
 				CE2A19852654E7A100BE5C15 /* RouterStrategy.swift in Sources */,
 				CEAAE66826550755008F9136 /* PopToRootViewControllerStrategy.swift in Sources */,
@@ -429,16 +450,19 @@
 				CE7D552C265404390062E054 /* Router.swift in Sources */,
 				CEF9B444265282970051BE8F /* SceneEventObserver.swift in Sources */,
 				CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */,
+				CEAAE6732655082A008F9136 /* AddNameViewController.swift in Sources */,
 				CE7D5532265408550062E054 /* Routes.swift in Sources */,
 				CEF9B41926527FA90051BE8F /* FlowCoordinator.swift in Sources */,
 				CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */,
 				CEAAE663265506E2008F9136 /* PopViewControllerStrategy.swift in Sources */,
 				CE2A19612654E60000BE5C15 /* PushViewControllerStrategy.swift in Sources */,
+				CEAAE68026550846008F9136 /* AddNameAssembler.swift in Sources */,
 				CEAAE6532654F643008F9136 /* SignInAssembler.swift in Sources */,
 				CEAAE6462654F601008F9136 /* SignInViewController.swift in Sources */,
 				CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */,
 				CEF9B3D626527ECA0051BE8F /* SceneDelegate.swift in Sources */,
 				CEAAE64E2654F627008F9136 /* SignInInteractor.swift in Sources */,
+				CEAAE66D265507F4008F9136 /* AddNameFlowCoordinator.swift in Sources */,
 				CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */,
 				CEAAE65E2655060C008F9136 /* User.swift in Sources */,
 			);

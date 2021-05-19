@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  AddNameViewController.swift
 //  Routers
 //
-//  Created by Mateusz Fidos on 17/05/2021.
+//  Created by Mateusz Fidos on 19/05/2021.
 //
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+
+final class AddNameViewController: UIViewController {
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -17,25 +18,25 @@ class OnboardingViewController: UIViewController {
         return stackView
     }()
 
-    private lazy var signInButton: UIButton = {
+    private lazy var addNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = Constants.Strings.textFieldPlaceholder
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+
+    private lazy var submitButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle(Constants.Strings.signInButtonTitle, for: .normal)
-        button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(Constants.Strings.submitButtonTitle, for: .normal)
+        button.addTarget(self, action: #selector(submit), for: .touchUpInside)
         return button
     }()
 
-    private lazy var signUpButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle(Constants.Strings.signUpButtonTitle, for: .normal)
-        button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
-        return button
-    }()
+    let interactor: AddNameInteractor
 
 
-    let interactor: OnboardingInteractor
-
-
-    init(interactor: OnboardingInteractor) {
+    init(interactor: AddNameInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,8 +57,8 @@ class OnboardingViewController: UIViewController {
 
     private func setUpViews() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(signInButton)
-        stackView.addArrangedSubview(signUpButton)
+        stackView.addArrangedSubview(addNameTextField)
+        stackView.addArrangedSubview(submitButton)
 
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -66,28 +67,24 @@ class OnboardingViewController: UIViewController {
     }
 
 
-    @objc private func signIn() {
-        interactor.signIn()
+    @objc private func submit() {
+        interactor.submit()
     }
-
-
-    @objc private func signUp() {
-        interactor.signUp()
-    }
-
 
 }
 
-extension OnboardingViewController {
+
+extension AddNameViewController {
 
     fileprivate enum Constants {
-        enum Strings {
-            static let signInButtonTitle: String = "Sign In"
-            static let signUpButtonTitle: String = "Sign Up"
-        }
         enum Views {
             static let stackViewSpacing: CGFloat = 24.0
         }
+        enum Strings {
+            static let textFieldPlaceholder: String = "Type your username here"
+            static let submitButtonTitle: String = "Submit"
+        }
     }
 
 }
+
