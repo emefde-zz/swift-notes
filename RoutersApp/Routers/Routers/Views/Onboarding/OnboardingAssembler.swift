@@ -8,7 +8,7 @@
 import UIKit
 
 
-enum OnboardingAssembler {
+enum OnboardingAssembler: ModuleAssembler {
 
     static func assemble(with router: Router) -> UIViewController {
         OnboardingViewController(

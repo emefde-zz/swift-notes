@@ -19,7 +19,9 @@ final class AppFlowCoordinator:
     private var window: UIWindow?
     private lazy var rootViewController = OnboardingAssembler.assemble(with: self)
     private(set) weak var presentedViewController: UIViewController?
-    private lazy var presentingNavigationController: UINavigationController = UINavigationController()
+    private lazy var presentingNavigationController: UINavigationController = {
+        UINavigationController(rootViewController: rootViewController)
+    }()
 
 
     public func assign(window: UIWindow?) {
@@ -28,12 +30,39 @@ final class AppFlowCoordinator:
 
 
     public func start() {
-        window?.rootViewController = rootViewController
+        window?.rootViewController = presentingNavigationController
         window?.makeKeyAndVisible()
         presentedViewController = rootViewController
     }
 
-    func route<R>(to route: R) where R : Route { print(route.name) }
-    func dismiss<R>(with route: R) where R : Route { print(route.name) }
+
+    func route<R>(to route: R) where R : Route {
+        switch ValidRoutes.init(rawValue: route.name) {
+        case .signIn:
+            SignInFlowCoordinator(
+                parent: self,
+                navigationController: presentingNavigationController
+            ).start()
+        case .signUp:
+            break
+        default:
+            assertionFailure(Constants.Assertion.invalidRouteAssertion)
+        }
+    }
+
+
+    func dismiss<R>(with route: R) where R : Route { }
+
+}
+
+
+private extension AppFlowCoordinator {
+
+    enum ValidRoutes: String {
+
+        case signIn = "sign.in.route"
+        case signUp = "sign.up.route"
+
+    }
 
 }
