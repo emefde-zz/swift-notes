@@ -18,6 +18,9 @@ final class AddNameInteractor {
     }
 
 
-    func submit() { }
+    func submit(name: String?) {
+        guard let name = name else { return }
+        router.route(to: AddEmailRoute(name: name))
+    }
 
 }

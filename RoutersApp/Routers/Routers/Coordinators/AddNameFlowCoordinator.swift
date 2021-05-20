@@ -13,12 +13,12 @@ final class AddNameFlowCoordinator:
     Coordinator,
     Router {
 
-    let parent: FlowCoordinator?
+    let parent: (FlowCoordinator & Router)
     private weak var navigationController: UINavigationController?
 
 
     init(
-        parent: FlowCoordinator,
+        parent: (FlowCoordinator & Router),
         navigationController: UINavigationController?
     ) {
         self.parent = parent
@@ -37,7 +37,10 @@ final class AddNameFlowCoordinator:
     func route<R>(to route: R) where R : Route {
         switch ValidRoutes.init(rawValue: route.name) {
         case .email:
-            break
+            AddEmailFlowCoordinator(
+                parent: parent,
+                navigationController: navigationController
+            ).start()
         default:
             assertionFailure(Constants.Assertion.invalidRouteAssertion)
         }

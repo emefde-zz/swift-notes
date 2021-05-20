@@ -14,7 +14,7 @@ final class AppFlowCoordinator:
     Coordinator,
     Router {
 
-    var parent: FlowCoordinator? { nil }
+    var parent: (FlowCoordinator & Router) { self }
 
     private var window: UIWindow?
     private lazy var rootViewController = OnboardingAssembler.assemble(with: self)
@@ -51,7 +51,11 @@ final class AppFlowCoordinator:
     }
 
 
-    func dismiss<R>(with route: R) where R : Route { }
+    func dismiss<R>(with route: R) where R : Route {
+        PopToRootViewControllerStrategy(
+            navigationController: presentingNavigationController
+        ).start()
+    }
 
 }
 

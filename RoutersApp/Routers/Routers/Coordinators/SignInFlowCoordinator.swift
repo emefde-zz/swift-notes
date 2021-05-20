@@ -14,12 +14,12 @@ final class SignInFlowCoordinator:
     Coordinator,
     Router {
 
-    let parent: FlowCoordinator?
+    let parent: (FlowCoordinator & Router)
     private weak var navigationController: UINavigationController?
 
 
     init(
-        parent: FlowCoordinator,
+        parent: (FlowCoordinator & Router),
         navigationController: UINavigationController
     ) {
         self.parent = parent
@@ -39,7 +39,7 @@ final class SignInFlowCoordinator:
         switch ValidRoutes.init(rawValue: route.name) {
         case .name:
             AddNameFlowCoordinator(
-                parent: self,
+                parent: parent,
                 navigationController: navigationController
             ).start()
         default:

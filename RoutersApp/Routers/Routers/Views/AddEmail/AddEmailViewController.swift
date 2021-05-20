@@ -1,14 +1,14 @@
 //
-//  AddNameViewController.swift
+//  AddEmailViewController.swift
 //  Routers
 //
-//  Created by Mateusz Fidos on 19/05/2021.
+//  Created by Mateusz Fidos on 20/05/2021.
 //
 
 import UIKit
 
 
-final class AddNameViewController: UIViewController {
+final class AddEmailViewController: UIViewController {
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -18,7 +18,7 @@ final class AddNameViewController: UIViewController {
         return stackView
     }()
 
-    private lazy var addNameTextField: UITextField = {
+    private lazy var addEmailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = Constants.Strings.textFieldPlaceholder
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -33,10 +33,10 @@ final class AddNameViewController: UIViewController {
         return button
     }()
 
-    let interactor: AddNameInteractor
+    let interactor: AddEmailInteractor
 
 
-    init(interactor: AddNameInteractor) {
+    init(interactor: AddEmailInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
@@ -57,7 +57,7 @@ final class AddNameViewController: UIViewController {
 
     private func setUpViews() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(addNameTextField)
+        stackView.addArrangedSubview(addEmailTextField)
         stackView.addArrangedSubview(submitButton)
 
         NSLayoutConstraint.activate([
@@ -68,23 +68,22 @@ final class AddNameViewController: UIViewController {
 
 
     @objc private func submit() {
-        interactor.submit(name: addNameTextField.text)
+        interactor.submit(email: addEmailTextField.text)
     }
 
 }
 
 
-extension AddNameViewController {
+extension AddEmailViewController {
 
     fileprivate enum Constants {
         enum Views {
             static let stackViewSpacing: CGFloat = 24.0
         }
         enum Strings {
-            static let textFieldPlaceholder: String = "Type your username here"
+            static let textFieldPlaceholder: String = "Type your email here"
             static let submitButtonTitle: String = "Submit"
         }
     }
 
 }
-

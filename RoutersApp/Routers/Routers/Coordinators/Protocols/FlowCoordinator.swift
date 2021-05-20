@@ -13,6 +13,6 @@ import Foundation
 
 protocol FlowCoordinator {
 
-    var parent: FlowCoordinator? { get }
+    var parent: (FlowCoordinator & Router) { get }
 
 }

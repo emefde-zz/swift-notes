@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CE2A19612654E60000BE5C15 /* PushViewControllerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A19602654E60000BE5C15 /* PushViewControllerStrategy.swift */; };
 		CE2A19852654E7A100BE5C15 /* RouterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A19842654E7A100BE5C15 /* RouterStrategy.swift */; };
+		CE60C81D26564AA200CA7A82 /* AddEmailFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60C81C26564AA200CA7A82 /* AddEmailFlowCoordinator.swift */; };
+		CE60C82326564AD200CA7A82 /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60C82226564AD200CA7A82 /* AddEmailViewController.swift */; };
+		CE60C82B26564ADC00CA7A82 /* AddEmailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60C82A26564ADC00CA7A82 /* AddEmailInteractor.swift */; };
+		CE60C83026564AE400CA7A82 /* AddEmailAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60C82F26564AE400CA7A82 /* AddEmailAssembler.swift */; };
 		CE7D550A2653FA970062E054 /* OnboardingAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D55092653FA970062E054 /* OnboardingAssembler.swift */; };
 		CE7D552C265404390062E054 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D552B265404390062E054 /* Router.swift */; };
 		CE7D5532265408550062E054 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5531265408550062E054 /* Routes.swift */; };
@@ -60,6 +64,10 @@
 /* Begin PBXFileReference section */
 		CE2A19602654E60000BE5C15 /* PushViewControllerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewControllerStrategy.swift; sourceTree = "<group>"; };
 		CE2A19842654E7A100BE5C15 /* RouterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterStrategy.swift; sourceTree = "<group>"; };
+		CE60C81C26564AA200CA7A82 /* AddEmailFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailFlowCoordinator.swift; sourceTree = "<group>"; };
+		CE60C82226564AD200CA7A82 /* AddEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailViewController.swift; sourceTree = "<group>"; };
+		CE60C82A26564ADC00CA7A82 /* AddEmailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailInteractor.swift; sourceTree = "<group>"; };
+		CE60C82F26564AE400CA7A82 /* AddEmailAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailAssembler.swift; sourceTree = "<group>"; };
 		CE7D55092653FA970062E054 /* OnboardingAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembler.swift; sourceTree = "<group>"; };
 		CE7D552B265404390062E054 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE7D5531265408550062E054 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
@@ -139,6 +147,16 @@
 				CE2A19842654E7A100BE5C15 /* RouterStrategy.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE60C82126564AC300CA7A82 /* AddEmail */ = {
+			isa = PBXGroup;
+			children = (
+				CE60C82226564AD200CA7A82 /* AddEmailViewController.swift */,
+				CE60C82A26564ADC00CA7A82 /* AddEmailInteractor.swift */,
+				CE60C82F26564AE400CA7A82 /* AddEmailAssembler.swift */,
+			);
+			path = AddEmail;
 			sourceTree = "<group>";
 		};
 		CE7D552A265404230062E054 /* Router */ = {
@@ -273,6 +291,7 @@
 				CEF9B41D2652806C0051BE8F /* AppFlowCoordinator.swift */,
 				CEBF75B12653F8D6001ACF2F /* SignInFlowCoordinator.swift */,
 				CEAAE66C265507F4008F9136 /* AddNameFlowCoordinator.swift */,
+				CE60C81C26564AA200CA7A82 /* AddEmailFlowCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -292,6 +311,7 @@
 		CEF9B40B26527F320051BE8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE60C82126564AC300CA7A82 /* AddEmail */,
 				CEAAE67126550818008F9136 /* AddName */,
 				CEAAE6442654F5E4008F9136 /* SignIn */,
 				CEBF75B92653F90E001ACF2F /* Onboarding */,
@@ -449,6 +469,8 @@
 				CEF9B3D826527ECA0051BE8F /* OnboardingViewController.swift in Sources */,
 				CE7D552C265404390062E054 /* Router.swift in Sources */,
 				CEF9B444265282970051BE8F /* SceneEventObserver.swift in Sources */,
+				CE60C83026564AE400CA7A82 /* AddEmailAssembler.swift in Sources */,
+				CE60C82B26564ADC00CA7A82 /* AddEmailInteractor.swift in Sources */,
 				CEBF75B22653F8D6001ACF2F /* SignInFlowCoordinator.swift in Sources */,
 				CEAAE6732655082A008F9136 /* AddNameViewController.swift in Sources */,
 				CE7D5532265408550062E054 /* Routes.swift in Sources */,
@@ -459,10 +481,12 @@
 				CEAAE68026550846008F9136 /* AddNameAssembler.swift in Sources */,
 				CEAAE6532654F643008F9136 /* SignInAssembler.swift in Sources */,
 				CEAAE6462654F601008F9136 /* SignInViewController.swift in Sources */,
+				CE60C82326564AD200CA7A82 /* AddEmailViewController.swift in Sources */,
 				CEF9B3D426527ECA0051BE8F /* AppDelegate.swift in Sources */,
 				CEF9B3D626527ECA0051BE8F /* SceneDelegate.swift in Sources */,
 				CEAAE64E2654F627008F9136 /* SignInInteractor.swift in Sources */,
 				CEAAE66D265507F4008F9136 /* AddNameFlowCoordinator.swift in Sources */,
+				CE60C81D26564AA200CA7A82 /* AddEmailFlowCoordinator.swift in Sources */,
 				CEBF75BB2653F91D001ACF2F /* OnboardingInteractor.swift in Sources */,
 				CEAAE65E2655060C008F9136 /* User.swift in Sources */,
 			);
