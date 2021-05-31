@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5D188B8E326B884C63BD68AA /* Pods_ReactiveAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1424B1F87C7C5FA9F4085C /* Pods_ReactiveAppTests.framework */; };
 		AE31AA7BE4153E70D57D96BD /* Pods_ReactiveApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57CD2C7E5F7EB30123DD57 /* Pods_ReactiveApp.framework */; };
+		CEA2982F2664F7B600AE4E4D /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2982E2664F7B600AE4E4D /* NetworkClient.swift */; };
+		CEA7A0972665271800D1F48D /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7A0962665271800D1F48D /* CacheKey.swift */; };
+		CEA7A09C2665274900D1F48D /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7A09B2665274900D1F48D /* Cache.swift */; };
+		CEA7A0A12665287B00D1F48D /* CodableCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7A0A02665287B00D1F48D /* CodableCaching.swift */; };
+		CEA7A0A826652C5B00D1F48D /* Observable+attemptJust.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7A0A726652C5B00D1F48D /* Observable+attemptJust.swift */; };
 		CEE15144266390490033151A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15143266390490033151A /* AppDelegate.swift */; };
 		CEE15146266390490033151A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15145266390490033151A /* SceneDelegate.swift */; };
 		CEE15148266390490033151A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15147266390490033151A /* ViewController.swift */; };
@@ -40,6 +45,11 @@
 		0B57CD2C7E5F7EB30123DD57 /* Pods_ReactiveApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53290FA62E85DA51FC952B20 /* Pods-ReactiveAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactiveAppTests/Pods-ReactiveAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70C406FBACFFD44BB2DC4DAA /* Pods-ReactiveAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveAppTests.release.xcconfig"; path = "Target Support Files/Pods-ReactiveAppTests/Pods-ReactiveAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEA2982E2664F7B600AE4E4D /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CEA7A0962665271800D1F48D /* CacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
+		CEA7A09B2665274900D1F48D /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		CEA7A0A02665287B00D1F48D /* CodableCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableCaching.swift; sourceTree = "<group>"; };
+		CEA7A0A726652C5B00D1F48D /* Observable+attemptJust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+attemptJust.swift"; sourceTree = "<group>"; };
 		CEE15140266390490033151A /* ReactiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE15143266390490033151A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE15145266390490033151A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +105,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEA2982A2664F76200AE4E4D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2982E2664F7B600AE4E4D /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CEA7A0952665270D00D1F48D /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7A0962665271800D1F48D /* CacheKey.swift */,
+				CEA7A09B2665274900D1F48D /* Cache.swift */,
+				CEA7A0A02665287B00D1F48D /* CodableCaching.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CEA7A0A526652A2900D1F48D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CEA7A0A626652C4300D1F48D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7A0A726652C5B00D1F48D /* Observable+attemptJust.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEE15137266390490033151A = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +163,10 @@
 		CEE15142266390490033151A /* ReactiveApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7A0A626652C4300D1F48D /* Extensions */,
+				CEA7A0A526652A2900D1F48D /* Requests */,
+				CEA7A0952665270D00D1F48D /* Cache */,
+				CEA2982A2664F76200AE4E4D /* Networking */,
 				CEE15143266390490033151A /* AppDelegate.swift */,
 				CEE15145266390490033151A /* SceneDelegate.swift */,
 				CEE15147266390490033151A /* ViewController.swift */,
@@ -157,7 +204,6 @@
 				53290FA62E85DA51FC952B20 /* Pods-ReactiveAppTests.debug.xcconfig */,
 				70C406FBACFFD44BB2DC4DAA /* Pods-ReactiveAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -376,9 +422,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA7A0972665271800D1F48D /* CacheKey.swift in Sources */,
+				CEA7A0A12665287B00D1F48D /* CodableCaching.swift in Sources */,
 				CEE15148266390490033151A /* ViewController.swift in Sources */,
 				CEE15144266390490033151A /* AppDelegate.swift in Sources */,
+				CEA7A0A826652C5B00D1F48D /* Observable+attemptJust.swift in Sources */,
 				CEE15146266390490033151A /* SceneDelegate.swift in Sources */,
+				CEA7A09C2665274900D1F48D /* Cache.swift in Sources */,
+				CEA2982F2664F7B600AE4E4D /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
